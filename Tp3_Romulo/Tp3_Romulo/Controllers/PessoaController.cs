@@ -113,11 +113,21 @@ namespace Tp3_Romulo.Controllers
 
         // POST: Pessoa/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, PessoaModel _pessoa)
         {
             try
             {
-                // TODO: Add delete logic here
+                PessoaModel aux = null;
+                for (int i = 0; i < lst_Pessoa.Count; i++)
+                {
+                    if (lst_Pessoa[i].id == id)
+                    {
+                        aux = lst_Pessoa[i];
+                    }
+                }
+
+                lst_Pessoa.Remove(aux);
+
 
                 return RedirectToAction("Index");
             }
