@@ -10,6 +10,7 @@ namespace Tp3_Romulo.Controllers
     public class PessoaController : Controller
     {
         static List<PessoaModel> lst_Pessoa;
+        static int id = 0;
 
         // GET: Pessoa
         public ActionResult Index()
@@ -27,7 +28,21 @@ namespace Tp3_Romulo.Controllers
         // GET: Pessoa/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            PessoaModel aux = null;
+            for (int i = 0; i < lst_Pessoa.Count; i++)
+            {
+                if (lst_Pessoa[i].id == id)
+                {
+                    aux = lst_Pessoa[i];
+                }
+            }
+
+            if (aux == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            return View(aux);
         }
 
         // GET: Pessoa/Create
@@ -42,7 +57,9 @@ namespace Tp3_Romulo.Controllers
         {
             try
             {
+                _pessoa.id = id;
                 lst_Pessoa.Add(_pessoa);
+                id++;
 
                 return RedirectToAction("Index");
             }
@@ -55,6 +72,7 @@ namespace Tp3_Romulo.Controllers
         // GET: Pessoa/Edit/5
         public ActionResult Edit(int id)
         {
+
             return View();
         }
 
@@ -64,7 +82,6 @@ namespace Tp3_Romulo.Controllers
         {
             try
             {
-                // TODO: Add update logic here
 
                 return RedirectToAction("Index");
             }
@@ -77,7 +94,21 @@ namespace Tp3_Romulo.Controllers
         // GET: Pessoa/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            PessoaModel aux = null;
+            for (int i = 0; i < lst_Pessoa.Count; i++)
+            {
+                if (lst_Pessoa[i].id == id)
+                {
+                    aux = lst_Pessoa[i];
+                }
+            }
+
+            if (aux == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            return View(aux);
         }
 
         // POST: Pessoa/Delete/5
