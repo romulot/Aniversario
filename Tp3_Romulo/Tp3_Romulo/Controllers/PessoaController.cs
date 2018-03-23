@@ -9,15 +9,19 @@ namespace Tp3_Romulo.Controllers
 {
     public class PessoaController : Controller
     {
+        static List<PessoaModel> lst_Pessoa;
+
         // GET: Pessoa
         public ActionResult Index()
         {
-            PessoaModel aux = new PessoaModel();
-            aux.nome = "Romulo";
-            aux.cpf = "11111111110";
-            aux.nascimento = new DateTime(1989, 11, 24);
 
-            return View(aux);
+            if (lst_Pessoa == null) { lst_Pessoa = new List<PessoaModel>(); }
+            //PessoaModel aux = new PessoaModel();
+            //aux.nome = "Romulo";
+            //aux.cpf = "11111111110";
+            //aux.nascimento = new DateTime(1989, 11, 24);
+
+            return View(lst_Pessoa);
         }
 
         // GET: Pessoa/Details/5
@@ -34,11 +38,11 @@ namespace Tp3_Romulo.Controllers
 
         // POST: Pessoa/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(PessoaModel _pessoa)
         {
             try
             {
-                // TODO: Add insert logic here
+                lst_Pessoa.Add(_pessoa);
 
                 return RedirectToAction("Index");
             }

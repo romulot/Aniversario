@@ -7,6 +7,7 @@ namespace Tp3_Romulo.Models
 {
     public class PessoaModel
     {
+        public int id { get; set; }
         public string nome { get; set; }
         public string cpf { get; set; }
         public DateTime nascimento { get; set; }
