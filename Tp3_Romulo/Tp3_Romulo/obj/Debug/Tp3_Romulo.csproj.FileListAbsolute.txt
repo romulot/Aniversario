@@ -161,3 +161,4 @@ C:\Users\romul\Documents\GitHub\Aniversario\Tp3_Romulo\Tp3_Romulo\bin\Microsoft.
 C:\Users\romul\Documents\GitHub\Aniversario\Tp3_Romulo\Tp3_Romulo\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\romul\Documents\GitHub\Aniversario\Tp3_Romulo\Tp3_Romulo\obj\Debug\Tp3_Romulo.dll
 C:\Users\romul\Documents\GitHub\Aniversario\Tp3_Romulo\Tp3_Romulo\obj\Debug\Tp3_Romulo.pdb
+C:\Users\romul\Documents\GitHub\Aniversario\Tp3_Romulo\Tp3_Romulo\obj\Debug\Tp3_Romulo.csprojResolveAssemblyReference.cache

@@ -72,16 +72,31 @@ namespace Tp3_Romulo.Controllers
         // GET: Pessoa/Edit/5
         public ActionResult Edit(int id)
         {
+            PessoaModel aux = null;
+            for (int i = 0; i < lst_Pessoa.Count; i++)
+            {
+                if (lst_Pessoa[i].id == id)
+                {
+                    aux = lst_Pessoa[i];
+                }
+            }
 
-            return View();
+            if (aux == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            return View(aux);
+            
         }
 
         // POST: Pessoa/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, PessoaModel _pessoa)
         {
             try
             {
+                               
 
                 return RedirectToAction("Index");
             }
